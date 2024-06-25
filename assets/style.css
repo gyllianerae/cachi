@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --pink: rgb(240, 113, 103);
+    --beige: rgb(254, 217, 183);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+div {
+    display: block;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: var(--beige);
+    overflow-x: hidden;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    min-height: 100vh;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes color-change {
+    0% {
+        color: blue;
+    }
+    50% {
+        color: red;
+    }
+    100% {
+       color: blue;
+    }
+}
+
+
+h1 {
+    /* position: relative; */
+    color: var(--pink);
+    font-size: 8vw;
+    font-weight: 500;
+    animation: pulse 2s infinite, color-change 5s ease-in-out infinite alternate;
+}
+
+.section-img {
+    display: block;
+    border: 20px solid var(--pink);
+    border-radius: 10%;
+    display: block;
+    width: 50%; /* Adjust this value to change the size */
+    height: auto; /* Maintain aspect ratio */
+    margin: 10px auto 0; /* Center the image with top margin */
+}
+
+.container {
+    position: relative;
+    top: -200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 700px;
+    grid-gap: 30px;
+}
+
+.container .box {
+    position: relative;
+    top: 25vh;
+    width: 200px;
+    height: auto;
+    transition: 0.5s;
+    
+    /* border-radius: 20%; */
+}
+
+.box, .box img {
+    border: 6px solid transparent;
+}
+
+.box img {
+    width: 100%;
+    /* border-radius: 20%; */
+}
+
+.container .box:nth-child(3n+1) {
+    transform: translate(-400px, 0) scale(0);
+}
+
+.container .box:nth-child(3n+2) {
+    transform: translate(0,400px) scale(0);
+}
+
+.container .box:nth-child(3n+3) {
+    transform: translate(400px,0) scale(0);
+}
+
+.container .box.active {
+    transform: translate(0,0) scale(1);
+}
+
+.nav-img {
+    border-radius: 50%;
+    border: 8px solid var(--pink);
+}
+
+.navbar-text{
+    color: var(--pink);
+}
+
+.navbar-brand {
+    margin-right: 50%;
+}
+
+.buttons {
+    justify-content: center;
+    align-items: center;
+}
+
+.buy-btn, .soon-btn {
+    width: 20rem;
+}
+
+.buy-btn {
+    background-color: var(--pink);
+    color: var(--beige);
+    border: 5px solid var(--pink);
+    border-radius: 50px;
+    font-size: 3rem;
+}
+
+.soon-btn {
+    background-color: var(--beige);
+    color: var(--pink);
+    border: 5px solid var(--pink);
+    width: 28rem;
+    padding: 1rem;
+    border-radius: 50px;
+    font-size: 2rem;
+}
+
+.buy-btn:hover {
+    background-color: black;
+    color: white;
+    border-color: black;
+}
+
+.soon-btn:hover {
+    background-color: black;
+    color: white;
+    border-color: black;
+}
+
+.soon {
+    font-size: 1rem;
+}
+
+.socials a {
+    text-decoration: none;
+    color: var(--pink);
+    font-size: 5rem;
+}
+
+@media only screen and (max-width: 736px) {
+    
+}

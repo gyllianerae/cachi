@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll to Reveal Animation</title>
+    <link rel="stylesheet" href="assets/main.css" type="text/css">
+    <link rel="stylesheet" href="assets/style.css" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <nav class="navbar w-100">
+        <div class="container-fluid row">
+            <div class="col-6">
+                <a class="navbar-brand offset-5"><img src="assets/images/nav-img.png" alt="image" class="nav-img"></a>
+            </div>
+            <div class="col-6">
+                <p class="navbar-text display-5 offset-5 me-auto">$CACHI</p>
+            </div>
+        </div>
+    </nav>
+    <h1 class="mt-5">$CACHI</h1> <br>
+    <div>
+        <img src="assets/images/base.png" alt="image" class="section-img">
+    </div>
+    <div class="display-4 mt-5">
+        CA: TBA
+    </div>
+    <div class="row buttons mt-5">
+        <div class="col-md-6 col-sm-12">
+            <button type="button" class="buy-btn btn btn-primary">BUY HERE</button>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <button type="button" class="soon-btn btn btn-info">Meme Maker [soon]</button>
+        </div>
+    </div>
+    <div class="row socials mt-5">
+        <div class="col">
+            <a href=""><i class="ri-twitter-fill"></i></a>
+        </div>
+        <div class="col">
+            <a href=""><i class="ri-telegram-fill"></i></i></a>
+        </div>
+        
+    </div>
+    <h2 class="mt-5">$CACHI MEMES</h2>
+    <div class="container mb-5"></div>
+    <div class="mt-5">
+        <footer>
+            <i class="ri-copyright-line"></i> 2024 $CACHI. All rights reserved.
+        </footer>
+    </div>
+    <!-- <script>
+        for (let i=1; i<=60; i++){
+            let box = document.createElement('div');
+            box.classList.add('box');
+            document.querySelector('.container').appendChild(box);
+        }
+
+        //add random colors in each box
+        let randomColorBlock = document.querySelectorAll('.box');
+
+        function addColor(){
+            randomColorBlock.forEach(e => {
+                e.style.background = randomColor();
+            })
+        }
+
+        function randomColor(){
+            let chars = "1234567890abcdef";
+            let colorLength = 6;
+            let color = "";
+
+            for (let i=1; i<=colorLength; i++){
+                let randomColors = Math.floor(Math.random() * chars.length);
+                color += chars.substring(randomColors,randomColors+1);
+            }
+            return "#"+color
+        }
+
+        addColor();
+
+        let boxes = document.querySelectorAll('.box');
+        function scrollTrigger(){
+            boxes.forEach(boxxx => {
+                if(boxxx.offsetTop < window.scrollY){
+                    boxxx.classList.add('active')
+                } else {
+                    boxxx.classList.remove('active')
+                }
+            })
+        }
+        window.addEventListener('scroll', scrollTrigger);
+    </script> -->
+
+    <script>
+
+        // Function to generate random color
+        function getRandomColor() {
+            let letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        for (let i = 1; i <= 30; i++) {
+            let box = document.createElement('div');
+            box.classList.add('box');
+            document.querySelector('.container').appendChild(box);
+        }
+
+        // Add images to each box
+        let boxes = document.querySelectorAll('.box');
+        function addImages() {
+            boxes.forEach((box, index) => {
+                let imageIndex = (index % 20) + 1;
+                let img = document.createElement('img');
+                img.src = `assets/images/${imageIndex}.png`; // Cycle through images 1-20
+                img.alt = `Image ${imageIndex}`;
+                img.classList.add('box-img');
+                // Set random border color
+                box.style.borderColor = getRandomColor();
+                box.appendChild(img);
+                // document.querySelector('.container').appendChild(box);
+                // box.style.backgroundImage = `url('assets/images/${imageIndex}.png')`;
+                console.log(`Setting background image for box ${index} to assets/images/${imageIndex}.png`);
+            });
+        }
+
+        addImages();
+
+        function scrollTrigger(){
+            boxes.forEach(boxxx => {
+                if(boxxx.offsetTop < window.scrollY){
+                    boxxx.classList.add('active')
+                } else {
+                    boxxx.classList.remove('active')
+                }
+            })
+        }
+
+        window.addEventListener('scroll', scrollTrigger);
+        scrollTrigger(); 
+    </script>
+</body>
+</html>
