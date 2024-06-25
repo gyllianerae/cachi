@@ -104,15 +104,15 @@ h1 {
 }
 
 .container .box:nth-child(3n+1) {
-    transform: translate(-400px, 0) scale(0);
+    transform: translate(-1500px, 0) scale(0);
 }
 
 .container .box:nth-child(3n+2) {
-    transform: translate(0,400px) scale(0);
+    transform: translate(0,1500px) scale(0);
 }
 
 .container .box:nth-child(3n+3) {
-    transform: translate(400px,0) scale(0);
+    transform: translate(1500px,0) scale(0);
 }
 
 .container .box.active {
